@@ -32,6 +32,7 @@ async def on_message(message):
             log(f"Added {args[1]} to monitoring", 0)
 
     else:
+        if message.author.bot: return
         for monitor in monitoring.values():
             if message.channel.id == monitor["channel_id"]:
                     try:
