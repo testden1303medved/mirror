@@ -1,6 +1,9 @@
 from vexsu import *
+import keep_alive
 import discord
 import os
+
+keep_alive.keep_alive()
 
 bot = discord.Client()
 
