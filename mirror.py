@@ -38,7 +38,7 @@ async def on_message(message):
                     try:
                         log(f"Recieved a message | {message.channel.id} - {message.author.id} > {message.id}", 3)
                         webhook = discord.Webhook.from_url(os.environ.get('WEBHOOK'), client=bot)
-                        await webhook.send(message.content, username=message.author.name, avatar_url=message.author.avatar.url if message.author.avatar is not None else "https://cdn.discordapp.com/attachments/1277956788377096193/1318566959398387722/discord-avatar-512-8XW3B.png?ex=6762caac&is=6761792c&hm=2ee534535169008c69b3d7f002c806b40ba78c8528b623d1f2de516fad006adc&")
+                        await webhook.send(message.content, username=message.author.name, avatar_url=message.author.avatar.url if message.author.avatar is not None else "https://cdn.discordapp.com/attachments/1277956788377096193/1318566959398387722/discord-avatar-512-8XW3B.png?ex=6762caac&is=6761792c&hm=2ee534535169008c69b3d7f002c806b40ba78c8528b623d1f2de516fad006adc&", attachments=message.attachments if message.attachments else None)
                     except Exception as e:
                         log(f"{e}", 2)
 
